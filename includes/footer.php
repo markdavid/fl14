@@ -1,7 +1,10 @@
       </div><!--end div class bluebox-->
       </div><!--end div class right-->
+      <?=$widget?>
       </div><!-- end main-->
+      
       <div class="footer1">
+      
         © 2006-<?= date('Y')?>
         <a href="#">Your Company Name</a>
         |

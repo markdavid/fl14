@@ -1,4 +1,4 @@
-<?php 
+<?php
 //config.php
 
 include 'includes/credentials.php'; #database credentials
@@ -14,6 +14,8 @@ date_default_timezone_set('America/Los_Angeles'); #sets default date/timezone fo
 ob_start();  #buffers our page to be prevent header errors. Call before INC files or ANY html!
 header("Cache-Control: no-cache");header("Expires: -1");#Helps stop browser & proxy caching
 
+include 'includes/random_rotate.php';
+
 $title = THIS_PAGE; //fallback unique title - see title tag in header.php
 if(DEBUG)
 {# When debugging, show all errors & warnings
@@ -28,6 +30,8 @@ $nav1 ['gallery.php']="Gallery";
 $nav1 ['blog.php']="Blog";
 $nav1 ['feedback.php']="Feedback";
 $nav1 ['database.php']="Database";
+$nav1 ['movies.php']="Movie Collection";
+
 
 
 /*echo '<pre>';
@@ -49,12 +53,53 @@ switch (THIS_PAGE)
 		break;	
 	case 'blog.php';
 		$title = "Blog Title Tag";
+		$widget = 	
+		  $heros[] = '<img src="images/coulson.png" />';
+		  $heros[] = '<img src="images/fury.png" />';
+		  $heros[] = '<img src="images/hulk.png" />';
+		  $heros[] = '<img src="images/thor.png" />';
+		  $heros[] = '<img src="images/black-widow.png" />';
+		  $heros[] = '<img src="images/captain-america.png" />';
+		  $heros[] = '<img src="images/machine.png" />';
+		  $heros[] = '<img src="images/iron-man.png" />';
+		  $heros[] = '<img src="images/loki.png" />';
+		  $heros[] = '<img src="images/giant.png" />';
+		  $heros[] = '<img src="images/hawkeye.png" />';
+		  echo randomize($heros);
+		  echo '
+		  <h3>Random SuperHero</h3>
+		  <p>Uses <b>randomize()</b> function and an array named <b>$heros</b> to 
+		  display a random hero icon on page reloads.</p>
+		  <p> </p>
+		  <p>The hero icons come from <a href="http://icongal.com/gallery/iconset/2503/avengers_superhero_avatar" target="_blank">here</a></p>';
 		break;	
 	case 'feedback.php';
 		$title = "Feedback Title Tag";
 		break;	
 	case 'database.php';
 		$title = "Database Title Tag";
+		break;	
+	case 'movies.php';
+		$title = "Movie Collection Title Tag";
+		$widget = 	
+		  $heros[] = '<img src="images/coulson.png" />';
+		  $heros[] = '<img src="images/fury.png" />';
+		  $heros[] = '<img src="images/hulk.png" />';
+		  $heros[] = '<img src="images/thor.png" />';
+		  $heros[] = '<img src="images/black-widow.png" />';
+		  $heros[] = '<img src="images/captain-america.png" />';
+		  $heros[] = '<img src="images/machine.png" />';
+		  $heros[] = '<img src="images/iron-man.png" />';
+		  $heros[] = '<img src="images/loki.png" />';
+		  $heros[] = '<img src="images/giant.png" />';
+		  $heros[] = '<img src="images/hawkeye.png" />';
+		  echo randomize($heros);
+		  echo '
+		  <h3>Random SuperHero</h3>
+		  <p>Uses <b>randomize()</b> function and an array named <b>$heros</b> to 
+		  display a random hero icon on page reloads.</p>
+		  <p> </p>
+		  <p>The hero icons come from <a href="http://icongal.com/gallery/iconset/2503/avengers_superhero_avatar" target="_blank">here</a></p>';
 		break;			
 	default:
 		$title = "Default Title Tag";
