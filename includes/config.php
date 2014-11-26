@@ -6,7 +6,16 @@ include 'includes/credentials.php'; #database credentials
 define('THIS_PAGE' ,basename($_SERVER['PHP_SELF']));
 //echo THIS_PAGE;
 //die;
+
 define('DEBUG',TRUE); #we want to see all errors
+/* automatic path settings - use the following 4 path settings for placing all code in one application folder */ 
+
+define('VIRTUAL_PATH', 'http://zephir.seattlecentral.edu/~horsey01/sprockets/'); # Virtual (web) 'root' of application for images, JS & CSS files
+
+define('PHYSICAL_PATH', '/home/classes/horsey01/public_html/sprockets/'); # Physical (PHP) 'root' of application for file & upload reference
+
+define('INCLUDE_PATH', PHYSICAL_PATH . 'includes/'); # Path to PHP include files - INSIDE APPLICATION ROOT
+
 
 date_default_timezone_set('America/Los_Angeles'); #sets default date/timezone for this website
 
@@ -200,5 +209,7 @@ function dbOut($str)
 	if($str!=""){$str = stripslashes(trim($str));}//strip out slashes entered for SQL safety
 	return $str;
 } #End dbOut()
+
+
 
 ?>
