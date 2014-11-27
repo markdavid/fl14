@@ -64,7 +64,7 @@ if($foundRecord)
 {#records exist - show muffin!
 ?>
 	<h3 align="center">Look its <?=$MovieName;?>!</h3>
-	<div align="center"><a href="demo_list.php">More Movies?!?</a></div>
+	<div align="center"><a href="movies.php">More Movies?!?</a></div>
 	<table align="center">
 		<tr>
 			<td><img src="upload/m<?=$myID;?>.jpg" /></td>
